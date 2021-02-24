@@ -1,0 +1,304 @@
+﻿6.1
+
+variables
+tab(0:6):tableau
+i:entier
+
+i=0
+pour (i<7)
+	tab(i) = 0
+	i++
+
+afficher tab
+
+
+6.2
+
+variables
+tab(0:5):tableau
+i:entier
+
+i=0
+		tab(0) = a
+		tab(1) = e
+		tab(2) = i
+		tab(3) = o
+		tab(4) = u
+		tab(5) = y
+afficher tab
+
+
+
+6.3
+variables
+	tab(0:8):tableau
+	i:entier
+
+i=0
+repeter
+	saisir (tab(i))
+	i++
+jusqu'a (i=8)	
+
+
+6.4
+l'algo produit une erreur
+	
+variables en entier
+	tab(0:4):tableau
+	i:entier	
+
+debut
+	i=0
+	pour (i<=0 à 4)
+		tab(i) = i*i
+		afficher tab(i)
+	i++
+fin
+
+
+
+6.5
+variables en entier
+	tab(0:5):tableau
+	i:entier	
+
+debut
+	i=1
+	tab(0)=1
+	afficher tab(0)
+	pour (i<=0 à 5)
+		tab(i) = tab(i-1)+2
+		afficher tab(i)
+	i++
+fin
+
+
+6.6
+1
+1
+2
+3
+5
+8
+13
+
+
+6.7
+variables
+	tab(0:8):tableau
+	i,total:entier
+
+debut
+i=0
+repeter
+	saisir (tab(i))
+	total =total + tab(i)
+	i++
+jusqu'a (i=8)	
+afficher (total/9)
+fin
+
+6.8
+
+variables
+	tab():tableau
+	i,tablength,plus,minus:entier
+
+debut
+	i:=0
+	plus:=0
+	minus:=0
+	SAISIR (tablength)
+	redimensioner tab(tablength)
+	repeter
+		saisir (tab(i))
+
+		si(tab(i)>=0)
+			plus++
+		si(tab(i)<0)
+			minus++
+		i++
+	jusqua (i=tablelength+1)
+
+	afficher minus
+	afficher plus
+fin
+
+
+
+6.9
+	
+
+variables
+	tab(tablength):tableau
+	i,tablength,total:entier
+
+
+debut
+i=0
+repeter
+	total =total + tab(i)
+	i++
+jusqu'a (i=tablelength+1)	
+afficher (total)
+fin
+
+
+
+6.10
+
+variables
+	tab1(8),tab2(8),tabfin(8):tableau entier
+	i:num
+
+debut
+	i=0
+	repeter
+		tabfin(i)=tab1(i)+tab2(i)
+		afficher tabfin(i)
+		i++
+	jusqua (i=8)
+	
+fin
+
+
+6.11
+
+variables
+	tab1(4),tab2(2):tableau entier
+	i,j,final:num
+
+
+debut
+	final :=0
+	i:=0
+	j:=0
+	repeter		
+		repeter
+			final=final + tab1(i)*tab2(j)
+			i++
+		jusqua (i=3)
+		j++
+	jusqua(j=2)
+	afficher final
+fin
+
+
+6.12
+
+variables
+	tab():tableau
+	i,tablength:entier
+
+debut
+	i:=0
+	saisir (tablength)
+	redimensioner tab(tablength)
+	repeter
+		saisir (tab(i))
+		tab(i) = tab(i)+1
+		afficher tab(i)
+		i++
+	jusqua (i=tablelength)
+
+	
+fin
+
+6.13
+
+variables
+	tab():tableau
+	i,valeur,position,tablength:entier
+
+debut
+	i:=0
+	saisir (tablength)
+	redimensioner tab(tablength)
+	repeter
+		saisir (tab(i))
+		i++
+	jusqua (i=tablelength)
+	i=0
+	repeter
+		si (i=0)
+			valeur=tab(i)
+			position=i
+		sinon si(tab(i)>valeur)
+			valeur=tab(i)
+			position=i
+		i++
+	jusqua (i=tablelength)
+	afficher (valeur,position)
+fin
+
+6.14
+
+variables
+	tab():tableau
+	i,fin,moyen,tablength:entier
+	total:real
+
+debut
+	i:=0
+	saisir (tablength)
+	redimensioner tab(tablength)
+	repeter
+		saisir (tab(i))
+		total = total + tab(i)
+		i++
+	jusqua (i=tablelength)
+	moyen = total/tablength
+	i=0
+	repeter
+		si(tab(i)>moyen)
+			fin++
+		i++
+	jusqua (i=tablelength)
+	afficher (fin)
+fin
+
+6.14bis
+
+variables
+	tab():tableau
+	i,fin,moyen,tablength:entier
+	total:real
+
+debut
+	i:=0
+	saisir (tablength)
+	redimensioner tab(tablength)
+	repeter
+		saisir (tab(i))
+		total = total + tab(i)
+		i++
+	jusqua (i=tablelength)
+	moyen = total/tablength
+	i=0
+	repeter
+		si(tab(i)<moyen)
+			fin++
+		i++
+	jusqua (i=tablelength)
+	afficher (fin)
+fin
+
+
+6.15
+
+variables
+	tableau(5,89,6,14,2) : tableau
+	i,j,stock:entier
+	
+debut
+
+pour(j=0,j<5,j++)
+	pour(i=0,i<5,i++)
+		si (tableau(i)>tableau(i+1))
+			stock=tableau(i)
+			tableau(i)=tableau(i+1)
+			tableau(i+1)=stock
+fin
+
+a essayer avec flag

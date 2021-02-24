@@ -1,0 +1,220 @@
+﻿5.1
+
+variables
+	i: num
+	
+debut	
+tant que (i<=3 et i>=1)
+	saisir (i)
+fin
+
+
+5.2
+
+variables
+	i: num
+
+debut	
+tant que (i<=20 et i>=10)
+	saisir (i)
+	si (i>20)
+		afficher "plus petit"
+	sinon si (i<10)
+		afficher "plus grand"
+fin
+		
+		
+5.3
+
+variables
+	i,a: num
+
+debut	
+saisir (i)
+a=i
+
+tant que (a<= i +10)
+	afficher a
+	a++
+fin
+	
+
+5.4
+
+variables
+	i,a :num
+
+debut	
+saisir (i)
+a=1
+tant que (a<=10)
+	afficher (i+" x "+a+" = "+(i*a)
+	a++
+fin
+	
+	
+5.5
+
+variables
+	i,a :num
+
+debut
+a=0
+saisir (i)
+
+tant que (i>0)
+	a = a+i
+	i--
+	
+afficher a
+fin
+
+
+5.6
+
+variables
+	i,a :num
+
+debut
+a=1
+saisir (i)
+
+tant que (i>1)
+	a = a*i
+	i--
+	
+afficher a
+fin
+
+
+5.7
+
+variables
+	i,a ,b,c :num
+	
+
+debut	
+i= 1
+tant que (i<=20)
+	saisir("saisir un nombre";a)
+	si (i=1)
+		b=a
+		c=i
+	sinon si (a>b)
+		b=a
+		c=i
+	i++
+
+afficher ("le plus grand nombre est :";b;" c'était le numero ";c)
+fin
+
+
+5.8
+	
+variables
+	i,a ,b,c :num
+	
+
+debut	
+i=1	
+repeter
+	saisir("saisir un nombre";a)
+	si (i=1)
+		b=a
+		c=i
+	sinon si (a!=0 et a>b)
+		b=a
+		c=i
+	i++
+jusqu'a (a!=0)
+
+si (a=0)
+	afficher ("naze")
+sinon
+	afficher ("le plus grand nombre est :";b;" c'était le numero ";c)
+fin
+
+
+5.9
+
+variables
+	total,payé,monnaie,c :entiers
+	
+
+debut
+	total=0
+	repeter
+		saisir("saisir le prix de votre article";c)
+		total=total+c
+	jusqu'a (c=0)
+		
+	saisir ("votre payment";payé)
+	monnaie= payé-total
+
+	afficher ("votre total:;total)
+	afficher ("votre monant payé:;payé)
+	afficher ("votre monnaie:;monnaie)
+
+	tant que (monnaie>0)
+		si (monnaie>=10)
+			afficher "10 euros"
+			monnaie= monnaie-10
+		sinon si (monnaie>=5)
+			afficher "5 euros"
+			monnaie= monnaie-5
+		sinon (
+			afficher "1 euros"
+			monnaie= monnaie-1
+fin
+
+
+5.10
+
+variables
+	marco,polo,ordre,desordre,i,marcopol :num
+	
+	
+debut
+	saisir ("chevaux partants: ", marco," chevaux joués: ",polo)
+
+	marcopol = marco-polo
+	i=marcopol 
+	tant que (i>1)
+		marcopol = marcopol*i
+		i--
+
+	i=polo
+	tant que (i>1)
+		polo = polo*i
+		i--
+
+	i=marco
+	tant que (i>1)
+		marco = marco*i
+		i--
+
+	ordre = marco/marcopol
+	desordre= ordre/polo
+
+	afficher "dans l'ordre: une chance sur ",ordre," de gagner"
+	afficher "dans le desordre: une chance sur ",desordre," de gagner"
+fin
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

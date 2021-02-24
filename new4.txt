@@ -1,0 +1,206 @@
+WAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAG
+---------------------------------------------
+debut
+
+variables
+	a,b,c:num
+	
+debut
+procedure permut(a,b)
+	c=a
+	a=b
+	b=c
+	afficher (a,b)
+permut(48,5)
+fin
+
+------------------------------------------------
+debut
+
+fonction facto(a:entiers):entiers
+	variables
+		total,i:entiers
+	total:=1
+	pour(i:=a;i>0;i--)
+		total:=total*i
+	return total
+
+facto(48)
+fin
+
+------------------------------------------------
+
+variables
+    sexe: str  age: num
+	
+	
+fonction impot(S:str,A:entiers):bool{
+	
+si (S ="f" et A <35 et A > 18)
+        return true
+    sinon si (S ="h" et A > 20)
+        return true
+    sinon si (S != "f" ou S != "h")
+		afficher "tu te fou de moi?"
+		return false
+    sinon 
+        return false
+}
+
+debut
+    saisir ("Age?",age, "sexe?(f ou h)" ,sexe)
+    impot (age, sexe)
+fin
+-------------------------------------------------
+
+variables
+	age:entiers
+	
+fonction categorie(age:entiers):str{
+		si (age >= 6 et age<=7)
+			return "poussin"
+		sinon si (age >= 8 et age<=9)
+			return "pupille"
+		sinon si (age >= 10 et age<=11)
+			return "minime"
+		sinon si (age >= 12)
+			return "cadet"
+		sinon 	
+			return "trop jeune"
+}
+saisir(age)
+categorie(age)
+
+
+
+----------------------------------------------------
+variables 
+   
+fonction prixphot( prix :num):num
+
+    
+    si (num<10)
+        prix = num * 0.1
+        return ("votre total est "+ prix)
+    sinon si (num < 30) 
+        prix = 1+num*0.09
+        return ("votre total est "+ prix)
+    sinon  
+        prix = 2.8+num*0.08
+		return ("votre total est "+ prix)
+		
+		
+debut  
+saisir (num) 
+afficher (prixphot(num))
+
+fin
+____________________________________________________________
+debut   
+	fonction date (jour,mois, annee:num):bool
+   
+    bis := (annee dp 400) ou (annee dp 4 et annee !dp 100)
+
+    valid1 := (jour>0 et (jour<=29 et mois=2 et bis) ou(jour<=28 et mois=2 et !bis))
+
+    valid2 := (jour>0 et jour<=31 et !bis) et (mois = 1 ou mois = 3 ou mois = 5 ou mois = 7 ou mois = 8 ou mois = 10)
+		
+    valid3 := (jour>0 et jour<=30 et !bis) et (mois = 4 ou mois = 6 ou mois = 9 ou mois =11 ou mois = 12 )
+	
+
+	
+	si (valid1 ou valid2 ou valid3)
+        afficher jour,"/",mois,"/",annee," est une date valide"
+		return true
+    sinon
+        afficher jour,"/",mois,"/",annee," est pourri"
+		return false
+		
+saisir (jour,mois, annee)
+date (jour,mois, annee)
+fin
+
+
+____________________________________________________________
+
+variables 
+	prix, somme, paiement, rendu : entier;
+	
+fonction getSomme() : entier {
+	variables
+		s : entier;
+	s := 0;
+	répéter {
+		saisir("Saisir le prix : ", prix);
+		s := s + prix;
+		
+	} jusqu'a (prix = 0);
+	return s;
+}
+
+procedure afficherCoupons(rendu){
+	
+	tantque(rendu > 0) faire
+		si(rendu >= 10){
+			afficher("10 €");
+			rendu := rendu - 10;
+		} sinon si(rendu >= 5){
+			afficher("5 €");
+			rendu := rendu - 5;
+		} sinon {
+			afficher("1 €");
+			rendu := rendu - 1;
+		}
+	fin_tantque	
+}
+
+debut
+	somme := getSomme();
+	Afficher("La somme est de ", somme);
+	
+	saisir("Saisir le paiement ", paiement);
+	rendu := paiement - somme;
+	
+	afficherCoupons(rendu);
+fin
+____________________________________________________________
+
+variables
+	marco,polo,marcopol:num
+	
+	
+debut
+
+fonction tiercé (marco,polo):num
+variables
+	i,ordre,desordre:num
+
+	marcopol = marco-polo
+	i=marcopol 
+	tant que (i>1)
+		marcopol = marcopol*i
+		i--
+
+	i=polo
+	tant que (i>1)
+		polo = polo*i
+		i--
+
+	i=marco
+	tant que (i>1)
+		marco = marco*i
+		i--
+
+	ordre = marco/marcopol
+	desordre= ordre/polo
+	
+	return (ordre,desordre)
+	/*afficher "dans l'ordre: une chance sur ",ordre," de gagner"
+	afficher "dans le desordre: une chance sur ",desordre," de gagner"*/
+	
+saisir ("chevaux partants: ", marco," chevaux joués: ",polo)
+
+tiercé(marco,polo)
+	
+fin
+

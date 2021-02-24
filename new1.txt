@@ -1,0 +1,173 @@
+4.2
+
+variables
+    h,m : num     
+debut
+    saisir ("heure:",h,"minutes:",m)
+    si (m = 59 et h =23)
+        h=0
+        m = 0
+        afficher "il sera ",h,"heures ",m,"minutes "
+    
+    sinon si (m = 59)
+        h=h+1
+        m = 0
+        afficher "il sera ",h,"heures ",m,"minutes "
+    
+    sinon 
+        m=m+1
+        afficher "il sera ",h,"heures ",m,"minutes "
+fin
+
+
+
+4.3
+
+variables
+    h,m,s : num     
+debut
+    saisir ("heure:",h,"minutes:",m, "secondes",s)
+    si (m = 59 et h =23 et s =59)
+        h=0
+        m = 0
+        s=0
+        afficher  "il sera ",h,"heures ",m,"minutes ",s,"secondes"
+    sinon si (m = 59 et s =59)
+        h=h+1
+        m = 0
+        s=0
+        afficher  "il sera ",h,"heures ",m,"minutes ",s,"secondes"
+    sinon si (s =59)
+        m=m+1
+        s=0
+        afficher  "il sera ",h,"heures ",m,"minutes ",s,"secondes"
+    sinon
+        s=s+1
+        afficher  "il sera ",h,"heures ",m,"minutes ",s,"secondes"
+fin
+
+4.4
+
+variables 
+    phot,prix :num
+
+debut   
+    saisir (num)
+    si (num<10)
+        prix = num * 0.1
+        afficher "votre total est "+ prix
+    sinon si (num < 30) 
+        prix = 1+num*0.09
+    sinon  
+        prix = 2.8+num*0.08
+fin
+
+
+4.5
+
+variables
+    sexe: str  age: num
+
+debut
+    saisir (age, sexe)
+    si (sexe ="f" et age <35 et age > 18)
+        afficher "habitant imposable"
+    sinon si (sexe ="m" et age > 20)
+        afficher "habitant imposable"
+    sinon si (sexe != "f" ou sexe != "m")
+    afficher "tu te fou de moi?"
+    sinon 
+        afficher "habitant non-imposable"
+fin
+
+4.6
+
+variables
+    total , vote1,vote2,vote3,vote4;votes : num
+
+debut
+    saisir (total,vote1,vote2,vote3,vote4)
+    si (vote1> total/2)
+        afficher "élu"
+    sinon si ( vote1 > total/8 et vote1 >vote2 et vote1 >vote3 et vote1 >vote4)
+        afficher "second tour favorable"
+    sinon si ( vote1 > total/8)
+        afficher "second tour defavorable"
+    sinon
+        afficher "perdu"
+fin
+
+4.7
+
+variables
+    ageclient, agepermis, accidents, agemaison,score : num
+
+debut
+    si (agemaison > 1)
+        score =score+1
+    si (agemclient > 25)
+        score =score+1
+    si (agempermis > 2)
+        score =score+1
+    si (accidents=1)
+        score =score-1    
+    si (accidents=2)
+        score =score-3
+    si (accidents>2)
+        score =-999
+
+    si (score<0)   
+        afficher "refus"
+    snon si (score=0)   
+        afficher "rouge"
+    sinon si  (score=1)   
+        afficher "orange"
+    sinon si (score>=2)   
+        afficher "vert"
+fin
+
+4.8
+
+variables
+    jour,mois,annee : num
+    bis,valid : bool
+
+debut   
+	saisir (jour,mois, annee)
+   
+        bis = (annee dp 400) ou (annee dp 4 et année !dp 100)
+
+    si (jour>0 et jour<=29 et mois=2 et bis)
+        afficher jour,"/",mois,"/",année," est une date valide"
+
+    sinon si (jour>0 et jour<=28 et mois=2 et !bis)
+        afficher jour,"/",mois,"/",année," est une date valide"
+
+    sinon si (jour>0 et jour<=31) et (mois = 1 ou mois = 3 ou mois = 5 ou mois = 7 ou mois = 8 ou mois = 10)
+        afficher jour,"/",mois,"/",année," est une date valide"
+		
+    sinon si (jour>0 et jour<=30) et (mois = 4 ou mois = 6 ou mois = 11 ou mois = 9 ou mois = 12)
+        afficher jour,"/",mois,"/",année," est une date valide"
+
+    sinon
+        afficher jour,"/",mois,"/",année," est pourri"
+fin
+
+
+
+debut   
+	saisir (jour,mois, annee)
+   
+    bis := (annee dp 400) ou (annee dp 4 et annee !dp 100)
+
+    valid1 := (jour>0 et (jour<=29 et mois=2 et bis) ou(jour<=28 et mois=2 et !bis))
+
+    valid2 := (jour>0 et jour<=31 et !bis) et (mois = 1 ou mois = 3 ou mois = 5 ou mois = 7 ou mois = 8 ou mois = 10)
+		
+    valid3 := (jour>0 et jour<=30 et !bis) et (mois = 4 ou mois = 6 ou mois = 9 ou mois =11 ou mois = 12 )
+	
+	si (valid1 ou valid2 ou valid3)
+        afficher jour,"/",mois,"/",annee," est une date valide"
+    sinon
+        afficher jour,"/",mois,"/",annee," est pourri"
+fin
